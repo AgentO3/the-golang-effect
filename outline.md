@@ -1,4 +1,33 @@
+[Work In Progress]
+
 - We believe in moving fast and we specifically pick tools that help us do just that.
+- Intros
+  - Owen Zanzal
+  - Baron Schwartz
+
+- What is The Golang Effect?
+  - The Tools we pick shape our company culture
+    - C++ culture
+    - Java culture
+    - Ruby culture
+
+- So Why Golang?
+  - Easy to learn
+  - Performant
+  - Fast to compile
+  - Easy to deploy
+
+- These Attributes Have Inspired Us
+  - Easy to learn
+    - We encourage continuous learning
+    - Not easy to hire Golang devs... yet. New hires are able to pickup Golang fast.
+    - Devs that don't have system programing experience are able to pickup Golang.
+
+- Two Steps Forward 1 Step Back
+  - Golang isn't aways perfect
+    - Can't cross-compile if you link to C lib
+
+
 - Golang is a perfect fit. 
   - It’s easy to install for local development.
   - It compiles fast.
