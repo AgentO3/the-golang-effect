@@ -1,31 +1,114 @@
 [Work In Progress]
 
-- We believe in moving fast and we specifically pick tools that help us do just that.
+#How we DevOps Golang at VividCortex
+
+- We believe in moving fast.
+- So we specifically pick tools that help us do just that.
+- This is the reason we build our platform on Golang.
+
+- Intros
+  - Owen Zanzal
+  - Baron Schwartz
+  - What is VividCortex
+    - Database Performance Management
+    - Our Agents install on
+
+- How did we decide on Golang?
+  - We evaluated many Languages
+  - Good deployment story
+     - Single binary deployable
+     - No run time dependencies
+  - Performant
+     - Efficient use of CPU & memory
+     - Concurrency is build in
+   - Fast compilation time
+   - Easy to pickup
+     - Experienced Go devs are rare
+
+- Golang Continuous Integration Pipeline
+  
+  - CircleCI for testing
+     - Github hooks show failure at GitHub pull request
+     - Email is dispatched upon error
+  
+  - Jenkins for building
+     - Package Management
+       - We need reproducible builds
+       - Go does not come with a package manager (npm, gem, maven)
+       - Why we wrote Jd
+     - Archive build artifacts in Jenkins
+  
+  - Deploying to stage or production
+    - Deployments are triggered via ChatOps commands
+      - Developers push when they are ready
+      - New developers learn by seeing
+      - Makes deployments fun
+    - We follow 12 factor app methods
+      - We break our system into many simple services
+    - Runit for daemon process management
+    - Ansible pushes binaries and parameters to target server
+    - Success or error message callback
+       - Success gifs
+       - Link to Jenkins console output upon error.
+ 
+-  Simple does not mean easy
+   - Dependency management not included
+   - Simplicity isn't free
+   - Target multiple platforms not always easy
+     - No cross-compile if you link to C libs
+
+
+
+
+
+- What Effect Does Golang Have on Our Culture?
 - Intros
   - Owen Zanzal
   - Baron Schwartz
 
-- What is The Golang Effect?
-  - The Tools we pick shape our company culture
-    - C++ culture
-    - Java culture
-    - Ruby culture
-
 - So Why Golang?
   - Easy to learn
-  - Performant
-  - Fast to compile
+  - Simplicity
   - Easy to deploy
 
-- These Attributes Have Inspired Us
+- Go's Attributes Have Inspired Us
+  
   - Easy to learn
-    - We encourage continuous learning
-    - Not easy to hire Golang devs... yet. New hires are able to pickup Golang fast.
-    - Devs that don't have system programing experience are able to pickup Golang.
+    - We encourage continuous learning.
+      - Everyone is encouraged to learn Go.
+        - We have frontend devs writing Go.
+        - Go is being coming the Ops language of cho.
+    - New hires are able to pickup Golang fast.
+    - Devs that don't have system programing experience are able to pickup 
+    - We care about "Time to First Deploy".
+    - ChatOps exposes all of the commands you need to stage and deploy code to production
+  - New developers onboard quickly.
+  - They learn by see others execute commands.
+Golang.
+  
+  - Simplicity
+   - We break our system into many simple services
+   - We are very skeptical about adopting new technology.
+ 
+  - Easy To Deployment
+   - Single binary to deploy
+   - Go fits nicely into12 factor app methods
+   - Single binary deployment is a ops dream
+   - Resolve all dependencies at build time
+   - Ship archives and unzip at deploy time
 
-- Two Steps Forward 1 Step Back
-  - Golang isn't aways perfect
+-  Golang simple does not mean easy
     - Can't cross-compile if you link to C lib
+    - Dependency management
+      - Why we built JD
+    - Simplicity != Easy
+
+
+
+
+
+
+
 
 
 - Golang is a perfect fit. 
@@ -49,7 +132,7 @@
 - The problem with command line tools
   - They don’t scale well as the team grows.
   - They can be difficult to setup.
-  - Bad first experice causes fear of use. 
+  - Bad first experience causes fear of use. 
 - ChatOps exposes all of the commands you need to stage and deploy code to production
   - New developers onboard quickly.
   - They learn by see others execute commands.
