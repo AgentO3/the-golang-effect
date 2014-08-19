@@ -1,139 +1,81 @@
-[Work In Progress]
-
-#How we DevOps Golang at VividCortex
+#The Golang Effect - How Golang shaped operations at VividCortex
 
 - We believe in moving fast.
 - So we specifically pick tools that help us do just that.
-- This is the reason we build our platform on Golang.
+- This is why we built our platform on Golang.
 
-- Intros
+- Intro
   - Owen Zanzal
-  - Baron Schwartz
-  - What is VividCortex
-    - Database Performance Management
-    - Our Agents install on
+    - Developer
+    - Automation
+    - Brewing beer
+  - About VividCortex
+    - Funded Startup located in Charlottesville VA
+    - Database Performance Management is our nitch
+    - Single line bash script to install agents
+    - Observes OS metrics, sniffs tcp and parses MySQL protocol
+    - Sends back to VC at 1 second granularity 
+    - Rank, compare, graph, notifications, fault detection, chop, slice, and dice
+    - This month is our 2 year anniversary 
 
-- How did we decide on Golang?
+- What lead us to Golang?
   - We evaluated many Languages
+  - A carefully crafted Language
   - Good deployment story
      - Single binary deployable
      - No run time dependencies
   - Performant
      - Efficient use of CPU & memory
-     - Concurrency is build in
-   - Fast compilation time
-   - Easy to pickup
+     - Concurrency is built in
+  - Wicked fast compilation time
+  - Easy to pickup
      - Experienced Go devs are rare
 
-- Golang Continuous Integration Pipeline
-  
-  - CircleCI for testing
+- Not all Rainbows and Gophers
+  - Simple does not mean easy
+     - No Generics 
+     - Sometimes you need to do things your self
+  - Dependency management not included
+  - Target multiple platforms not always easy
+     - No cross-compile if you link to C libs
+
+- The Go CI Pipeline
+  - Testing
+     - CircleCI automates testing
      - Github hooks show failure at GitHub pull request
      - Email is dispatched upon error
   
-  - Jenkins for building
+  - Building
+     - Jenkins automates build process 
+       - ProTip: Jenkins UI sucks! Use the Job DSL
      - Package Management
        - We need reproducible builds
        - Go does not come with a package manager (npm, gem, maven)
        - Why we wrote Jd
      - Archive build artifacts in Jenkins
   
-  - Deploying to stage or production
+  - Deploying
     - Deployments are triggered via ChatOps commands
-      - Developers push when they are ready
+      - No gatekeepers
+      - Push when you are ready
       - New developers learn by seeing
       - Makes deployments fun
-    - We follow 12 factor app methods
-      - We break our system into many simple services
+    - Ansible pushes binaries to target server
+    - Orchestrates any services restarts 
     - Runit for daemon process management
-    - Ansible pushes binaries and parameters to target server
-    - Success or error message callback
+      - Auto restarts services when they crash
+      - Pipes stdout to log
+      - Correctly handles log rotation 
+    - We follow 12 factor app methods
+      - Golang apps fit well into 12 factor
+      - We break our system into many simple apps
+      - Apps get configuration from env vars
+    - Success or error message callback to chatroom
        - Success gifs
-       - Link to Jenkins console output upon error.
- 
--  Simple does not mean easy
-   - Dependency management not included
-   - Simplicity isn't free
-   - Target multiple platforms not always easy
-     - No cross-compile if you link to C libs
+       - Link to Jenkins console output upon error
 
-
-
-
-
-- What Effect Does Golang Have on Our Culture?
-- Intros
-  - Owen Zanzal
-  - Baron Schwartz
-
-- So Why Golang?
-  - Easy to learn
-  - Simplicity
-  - Easy to deploy
-
-- Go's Attributes Have Inspired Us
-  
-  - Easy to learn
-    - We encourage continuous learning.
-      - Everyone is encouraged to learn Go.
-        - We have frontend devs writing Go.
-        - Go is being coming the Ops language of cho.
-    - New hires are able to pickup Golang fast.
-    - Devs that don't have system programing experience are able to pickup 
-    - We care about "Time to First Deploy".
-    - ChatOps exposes all of the commands you need to stage and deploy code to production
-  - New developers onboard quickly.
-  - They learn by see others execute commands.
-Golang.
-  
-  - Simplicity
-   - We break our system into many simple services
-   - We are very skeptical about adopting new technology.
- 
-  - Easy To Deployment
-   - Single binary to deploy
-   - Go fits nicely into12 factor app methods
-   - Single binary deployment is a ops dream
-   - Resolve all dependencies at build time
-   - Ship archives and unzip at deploy time
-
--  Golang simple does not mean easy
-    - Can't cross-compile if you link to C lib
-    - Dependency management
-      - Why we built JD
-    - Simplicity != Easy
-
-
-
-
-
-
-
-
-
-- Golang is a perfect fit. 
-  - It’s easy to install for local development.
-  - It compiles fast.
-  - Runs performantly.
-  - It’s easy for new employees to pick up and become productive.
-- Deploying Go is a operations dream
-  - Zero runtime dependencies.
-  - Single binary to deploy. 
-  - Fits well into 12 factor app method.
-- Go has spoiled us a bit and we strive to make everything as easy to deploy as Go is.
-  - We target multiple platforms, so it’s not as easy as some use cases where it’s for internal consumption only and assumptions/prerequisites can be satisfied.
-  - Go isn’t always perfect. There’s no cross-compile if you link to C libs, there’s some OS-specific stuff we do. There’s no vendoring or package versioning built-in (hence jd).
-- To try to make deployments more like Go we...
-  - For projects with package managers like PHP and Node we resolve all dependencies at build time.
-  - We archive all artifacts of that build in a zip file.
-  - We ship that archive to the destination server and uncompress.
-  - We look for ways to speed up build times.
-- When onboarding new developers we want to reduce the “Time to first deploy”.
-- The problem with command line tools
-  - They don’t scale well as the team grows.
-  - They can be difficult to setup.
-  - Bad first experience causes fear of use. 
-- ChatOps exposes all of the commands you need to stage and deploy code to production
-  - New developers onboard quickly.
-  - They learn by see others execute commands.
-  - They are easy and fun to use.
+- Golang in Operations
+  - Tool of choice for internal tools
+    - Go Migrate | DB Shard migration tool
+    - BumpIt | Semantic version bumping tool
+    - Check Health | Polls Consul API and notifies chatroom about failed health checks
