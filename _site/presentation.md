@@ -22,7 +22,7 @@ How Go shaped <br> operations at VividCortex
 
 ![bg](https://dl.dropboxusercontent.com/u/69816878/shipit-with-hubot/vc-team.jpg)
 
-## About Me
+## About Us
 
 @AgentO3
 
@@ -30,6 +30,20 @@ How Go shaped <br> operations at VividCortex
 - Ops & Automation
 - Organizing DevOpsCV
 - Brewing beer
+
+!
+
+![bg](https://dl.dropboxusercontent.com/u/69816878/shipit-with-hubot/vc-team.jpg)
+
+
+## About Us
+
+@xaprb
+
+- Founder CEO
+- Author of High Performance MySQL
+- CrossFit
+- Deep thoughts
 
 !
 
@@ -63,7 +77,7 @@ How Go shaped <br> operations at VividCortex
 
 ![bg](https://farm7.staticflickr.com/6039/6248560095_fecca3cc0d_b.jpg)
 
-## A carefully crafted language
+## A carefully crafted to solve real problems
 
 !
 
@@ -174,10 +188,9 @@ for _, i := range sorter {
 ## Jenkins automates <br>build process
 
 - Parameterized triggers to chain jobs together
+- Describe jobs in the Jenkins job DSL
 
-PROTIP: Jenkins UI sucks! <br> Use the Job DSL
-
-[example](https://github.com/VividCortex/jenkins-jobs/edit/master/api-ping.groovy)
+[example](https://github.com/AgentO3/the-golang-effect/blob/master/examples/job-dsl-golang.groovy)
 
 !
 
@@ -187,9 +200,9 @@ PROTIP: Jenkins UI sucks! <br> Use the Job DSL
 
  - Go does not come with a package manager (npm, gem, maven)
  - We need reproducible builds
- - Why we wrote jd
+ - Why we wrote jd and it's opensource
 
-[example](https://github.com/VividCortex/api-ping/blob/master/Godeps)
+[example](https://github.com/AgentO3/the-golang-effect/blob/master/examples/godeps)
 
 !
 
@@ -197,7 +210,7 @@ PROTIP: Jenkins UI sucks! <br> Use the Job DSL
 
 ## Archive build <br> artifacts in Jenkins
 
-[example](https://github.com/VividCortex/jenkins-jobs/edit/master/api-ping.groovy)
+[example](https://github.com/AgentO3/the-golang-effect/blob/master/examples/api-ping-example.groovy)
 
 !
 
@@ -224,7 +237,7 @@ PROTIP: Jenkins UI sucks! <br> Use the Job DSL
 
 ![agentdeploy](https://dl.dropboxusercontent.com/u/69816878/lastagents.png)
 
-[example](https://github.com/VividCortex/thing/blob/master/scripts/stage.coffee#L43)
+[example](https://github.com/AgentO3/the-golang-effect/blob/master/examples/release.coffee)
 
 
 !
@@ -235,7 +248,7 @@ PROTIP: Jenkins UI sucks! <br> Use the Job DSL
 
 - Orchestrates any services restarts
 
-[example](https://github.com/VividCortex/jenkins-jobs/blob/master/release-api.groovy)
+[example](https://github.com/AgentO3/the-golang-effect/blob/master/examples/release-api.groovy)
 
 !
 
@@ -265,7 +278,7 @@ PROTIP: Jenkins UI sucks! <br> Use the Job DSL
  - Success gifs for motivation
  - Link to Jenkins console output upon error
 
- [example](https://github.com/VividCortex/jenkins-jobs/blob/master/send-message-to-thing.groovy)
+ [example](https://github.com/AgentO3/the-golang-effect/blob/master/examples/hubot-callback.groovy)
 
 !
 
@@ -307,20 +320,22 @@ PROTIP: Jenkins UI sucks! <br> Use the Job DSL
 
 ## In Conclusion
 
-- We Love Go
-- Helps us move fast
-- Go is our go to language
+- Think deeply about your tools and processes
+- Apply "Kaizen" to your organization
+- Use the Job DSL
+- Go is pretty awesome
 - Things would be much different without it
 
 !
 
 ![bg](https://farm4.staticflickr.com/3449/3913570797_4c67a8e07a_b.jpg)
 
-## Thanks DevOpsDC!
+## Thanks Surge Conf!
 
+@xaprb <br>
 @AgentO3
 
-!
+<!-- !
 
 ![bg](https://farm4.staticflickr.com/3449/3913570797_4c67a8e07a_b.jpg)
 
@@ -328,4 +343,4 @@ PROTIP: Jenkins UI sucks! <br> Use the Job DSL
 
 - Spend the Day at VividCortex HQ
 - Lunch, Dinner, & Beer or Wine
-- Make it a long weekend
+- Make it a long weekend -->

@@ -18,7 +18,7 @@
   }
   div.centered {
   	margin:auto;
-  	font-size:45px;
+  	font-size:65px;
   	width:20em; /* So we get about 10 words per line */
     text-align: center;
     color: white;
@@ -67,6 +67,19 @@
     background-position:center;
     z-index:-1;
    }
+   @media print{
+     .bg img{
+       display:inline;
+       position:absolute;
+       left:0;
+       right:0;
+       top:0;
+       bottom:0;
+       background-size: cover;
+       background-position:center;
+       z-index:-1;
+       }
+   }
    .for-print .content-holder {
         width: 100%;
         height: 100%;
@@ -112,7 +125,7 @@
     text-shadow: 2px 5px #000;
   }
   .bg {
-        opacity:0.55;
+        opacity:0.75;
   }
   a {
     color:white;
