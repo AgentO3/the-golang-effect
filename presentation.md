@@ -59,7 +59,7 @@ How Go shaped <br> operations at VividCortex
 
 ![bg](https://farm3.staticflickr.com/2084/2454538469_2399e0b1cb_o.jpg)
 
-## August 30th marks our <br> 2nd Birthday
+## August 30th marked our <br> 2nd Birthday
 
 !
 
@@ -224,7 +224,7 @@ for _, i := range sorter {
 
 ### Triggered via ChatOps Commands
 
-- Commandline tools don't scale
+- Command line tools don't scale
 - Push when you are ready
 - New developers learn by seeing
 - Makes deployments fun
