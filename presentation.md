@@ -323,7 +323,7 @@ for _, i := range sorter {
 - Think deeply about your tools and processes
 - Apply "Kaizen" to your organization
 - Use the Job DSL
-- Go is pretty awesome
+- Go is our go to language
 - Things would be much different without it
 
 !
